@@ -84,5 +84,14 @@ func Routes(app *fiber.App){
 	app.Get("/searchresult", controllers.SearchController)
 	app.Get("/singlepost", controllers.SingleController)
     app.Post("/comments", controllers.UsersCommentController)
+
+
+
+
+    app.Get("/user/:id", user.GetUser)
+    app.Get("/users", user.GetUsers)
+    app.Post("/user", user.SaveUser)
+    app.Delete("/user/:id", user.DeleteUser)
+    app.Put("/user/:id", user.UpdateUser)
     
 }
